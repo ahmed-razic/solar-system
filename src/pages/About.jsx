@@ -2,13 +2,12 @@ function About() {
   return (
     <>
       <h1 className='text-6xl mb-4 text-white'>Our Solar System</h1>
-      <p className='mb-4 text-2xl font-light'>
-        A react app which provides detail information about planets, asteroids,
-        comets and other bodies of our Solar system. This app is made by{' '}
-        <strong></strong>.
+      <p className='mb-4 text-2xl font-light text-justify'>
+        A small web page which provides main information about planets,
+        asteroids, comets and other bodies in our Solar system.
       </p>
       <p className='text-lg text-gray-400'>
-        APIs provided by{' '}
+        APIs provided by:{' '}
         <strong className='text-white'>
           <a
             href='https://api.le-systeme-solaire.net/en/'
@@ -26,13 +25,12 @@ function About() {
             NASA Open APIs
           </a>
         </strong>
-        .
       </p>
       <p className='text-lg text-gray-400'>
-        Version <span className='text-white'>1.0.0</span>
+        Version: <span className='text-white'>1.0.0</span>
       </p>
       <p className='text-lg text-gray-400'>
-        Author{' '}
+        Author:{' '}
         <span className='text-white'>
           <a
             href='https://github.com/ahmed-razic'
