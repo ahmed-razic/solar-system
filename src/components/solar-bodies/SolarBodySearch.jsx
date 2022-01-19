@@ -23,7 +23,6 @@ function SolarBodySearch() {
       setAlert('Please enter something', 'error');
     } else if (text === 'All') {
       dispatch({ type: 'SET_LOADING' });
-      console.log(text);
       const bodies = await getBodies();
       dispatch({ type: 'GET_BODIES', payload: bodies });
       setText('');

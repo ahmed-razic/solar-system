@@ -11,6 +11,5 @@ const nasaPhoto = axios.create({
 //get NASA photo of the day
 export const getPhoto = async () => {
   const response = await nasaPhoto.get(`?api_key=${NASA_TOKEN}`);
-  console.log(response.data);
   return response.data;
 };
