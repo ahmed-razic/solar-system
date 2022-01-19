@@ -1,31 +1,34 @@
 import { useContext } from 'react';
-import AlertContext from '../context/alert/AlertContext';
 import PhotoContext from '../context/photo/PhotoContext';
-import { getPhoto } from '../context/photo/PhotoActions';
 import { Link } from 'react-router-dom';
 import { FaHome } from 'react-icons/fa';
 
-function NotFound() {
-  const { photo, loading, dispatch } = useContext(PhotoContext);
-  const { setAlert } = useContext(AlertContext);
-
-  photo = getPhoto();
-  dispatch({ type: 'SET_LOADING' });
-  dispatch({ type: 'GET_PHOTO', payload: photo });
-
-  console.log(photo);
+function NasaPhoto() {
+  const { photo } = useContext(PhotoContext);
 
   return (
-    <div className='hero'>
-      <div className='max-w-lg'>
-        <h1 className='text-1xl mb-8 font-bold'>NASA photo of the day</h1>
-        <img src='' alt='' />
-        <Link className='btn bg-neutral text-neutral-content btn-sm' to='/'>
-          <FaHome className='mr-2' /> Back to Home
-        </Link>
+    <div className='container max-w-screen-lg px-10'>
+      <div className='max-w-md'>
+        <h1 className='text-2xl mb-3 font-bold'>NASA photo of the day</h1>
+      </div>
+      <div className='mx-auto'>
+        <a href={photo.hdurl} target='_blank' rel='noreferrer'>
+          <img src={photo.url} alt='space' className='max-h-96 mb-5' />
+        </a>
+
+        <div>
+          <h2>
+            <strong>{photo.title}</strong>
+          </h2>
+          <h3>{photo.date}</h3>
+          <p className='text-justify my-5'>{photo.explanation}</p>
+          <Link className='btn bg-neutral text-neutral-content btn-sm' to='/'>
+            <FaHome className='mr-5' /> Back to Home
+          </Link>
+        </div>
       </div>
     </div>
   );
 }
 
-export default NotFound;
+export default NasaPhoto;

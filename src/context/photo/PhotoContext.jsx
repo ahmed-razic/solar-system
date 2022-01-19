@@ -3,7 +3,7 @@ import photoReducer from './PhotoReducer';
 
 const PhotoContext = createContext();
 
-export const SolarProvider = ({ children }) => {
+export const PhotoProvider = ({ children }) => {
   const initialState = {
     photo: {},
     loading: false,
