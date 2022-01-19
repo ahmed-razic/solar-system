@@ -49,7 +49,7 @@ function SolarBodySearch() {
                 className='w-full pr-40 bg-gray-200 input input-lg text-black'
                 value={text}
                 onChange={handleChange}
-                placeholder='Search (ex. Earth). Enter All for all'
+                placeholder={`E.g. 'Earth', or 'All'`}
               />
               <button
                 type='submit'

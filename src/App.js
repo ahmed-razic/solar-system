@@ -5,6 +5,7 @@ import Home from './pages/Home';
 import About from './pages/About';
 import NotFound from './pages/NotFound';
 import SolarBody from './pages/SolarBody';
+import NasaPhoto from './pages/NasaPhoto';
 import Alert from './components/layout/Alert';
 import { AlertProvider } from './context/alert/AlertContext';
 import { SolarProvider } from './context/solar/SolarContext';
@@ -24,6 +25,7 @@ function App() {
                 <Route path='/solarbody/:id' element={<SolarBody />} />
                 <Route path='/notfound' element={<NotFound />} />
                 <Route path='*' element={<NotFound />} />
+                <Route path='/nasa' element={<NasaPhoto />} />
               </Routes>
             </main>
 
