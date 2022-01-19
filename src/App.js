@@ -15,7 +15,7 @@ function App() {
     <SolarProvider>
       <AlertProvider>
         <Router>
-          <div className='flex flex-col justify-between hscreen'>
+          <div className='flex flex-col justify-between h-screen'>
             <Navbar />
             <main className='container mx-auto px- pb-12'>
               <Alert />
