@@ -1,10 +1,9 @@
-import { FaCodepen, FaStore, FaUserFriends, FaUsers } from 'react-icons/fa';
+import { FaHome } from 'react-icons/fa';
 import { useParams } from 'react-router-dom';
 import { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import Spinner from '../components/layout/Spinner';
 import SolarContext from '../context/solar/SolarContext';
-import space from '../components/layout/assets/space.jpg';
 
 function SolarBody() {
   const { bodies, loading } = useContext(SolarContext);
@@ -18,36 +17,57 @@ function SolarBody() {
   return (
     <>
       <div className='w-full mx-auto lg:w-10/12'>
-        <div className='mb-4'>
+        <div>
           <Link to='/' className='btn btn-ghost'>
-            Back To Search
+            <FaHome className='mr-2' /> Back To Search
           </Link>
         </div>
 
-        <div className='grid grid-cols-1 xl:grid-cols-3 lg:grid-cols-3 md:grid-cols-3 mb-8 md:gap-8'>
-          <div className='custom-card-image mb-6 md:mb-0'>
-            <div className='rounded-lg shadow-xl card image-full'>
-              <figure>
-                <img src={space} alt='' />
-              </figure>
-              <div className='card-body justify-end'>
-                <h2 className='card-title mb-0'>{body[0].avgTemp}</h2>
-                <p>{body[0].avgTemp}</p>
-              </div>
-            </div>
+        <div className='custom-card-image mb-3 md:mb-0'>
+          <div className='card-body justify-end'>
+            <h2 className='card-title mb-0 text-orange-400 text-5xl'>
+              {body[0].englishName}
+            </h2>
+            <p className='italic text-2xl'>( {body[0].id} )</p>
           </div>
+        </div>
 
-          <div className='col-span-2'>
-            <div className='mb-6'>
-              <h1 className='text-3xl card-title'>
-                {body[0].avgTemp}
-                <div className='ml-2 mr-1 badge badge-success'>
-                  {body[0].avgTemp}
-                </div>
-              </h1>
-              <p>{body[0].avgTemp}</p>
-              <div className='mt-4 card-actions'>{body[0].avgTemp}</div>
-            </div>
+        <div className='grid grid-cols-1 gap-3 xl:grid-cols-4 lg:grid-cols-3 md:grid-cols-2'>
+          <div className='card-body justify-end'>
+            <h2 className='card-title mb-0 text-orange-400'>Type</h2>
+            <p>{body[0].bodyType}</p>
+          </div>
+          <div className='card-body justify-end'>
+            <h2 className='card-title mb-0 text-orange-400'>Gravity</h2>
+            <p>{body[0].gravity}</p>
+          </div>
+          <div className='card-body justify-end'>
+            <h2 className='card-title mb-0 text-orange-400'>Mass</h2>
+            <p>{body[0].mass.massValue}</p>
+          </div>
+          <div className='card-body justify-end'>
+            <h2 className='card-title mb-0 text-orange-400'>
+              Average Temperature
+            </h2>
+            <p>{body[0].avgTemp}</p>
+          </div>
+          <div className='card-body justify-end'>
+            <h2 className='card-title mb-0 text-orange-400'>
+              Equatorial Radius
+            </h2>
+            <p>{body[0].equaRadius}</p>
+          </div>
+          <div className='card-body justify-end'>
+            <h2 className='card-title mb-0 text-orange-400'>Density</h2>
+            <p>{body[0].density}</p>
+          </div>
+          <div className='card-body justify-end'>
+            <h2 className='card-title mb-0 text-orange-400'>Volume</h2>
+            <p>{body[0].vol.volValue}</p>
+          </div>
+          <div className='card-body justify-end'>
+            <h2 className='card-title mb-0 text-orange-400'>Eccentricity</h2>
+            <p>{body[0].eccentricity}</p>
           </div>
         </div>
       </div>
