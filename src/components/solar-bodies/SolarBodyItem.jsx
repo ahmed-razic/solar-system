@@ -11,7 +11,7 @@ function SolarBodyItem({ body: { englishName, id } }) {
           </h2>
           <Link
             className='text-base-content text-opacity-40'
-            to={`/solarbody/{id}`}
+            to={`/solarbody/${id}`}
           >
             More info
           </Link>

@@ -30,9 +30,9 @@ function SolarBodySearch() {
     } else {
       dispatch({ type: 'SET_LOADING' });
       const bodies = await getBodies();
-      const selectedBodies = bodies.filter((body) => body.englishName === text);
+      const selectedBody = bodies.filter((body) => body.englishName === text);
 
-      dispatch({ type: 'GET_BODIES', payload: selectedBodies });
+      dispatch({ type: 'GET_BODIES', payload: selectedBody });
 
       setText('');
     }
