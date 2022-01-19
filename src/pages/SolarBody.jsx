@@ -61,13 +61,14 @@ function SolarBody() {
             <h2 className='card-title mb-0 text-orange-400'>Density</h2>
             <p>{body[0].density}</p>
           </div>
-          <div className='card-body justify-end'>
-            <h2 className='card-title mb-0 text-orange-400'>Volume</h2>
-            <p>{body[0].vol.volValue}</p>
-          </div>
+
           <div className='card-body justify-end'>
             <h2 className='card-title mb-0 text-orange-400'>Eccentricity</h2>
             <p>{body[0].eccentricity}</p>
+          </div>
+          <div className='card-body justify-end'>
+            <h2 className='card-title mb-0 text-orange-400'>Discovered By</h2>
+            <p>{body[0].discoveredBy !== '' ? body[0].discoveredBy : 'N/A'}</p>
           </div>
         </div>
       </div>
