@@ -6,7 +6,6 @@ const SolarContext = createContext();
 export const SolarProvider = ({ children }) => {
   const initialState = {
     bodies: [],
-    body: {},
     loading: false,
   };
 

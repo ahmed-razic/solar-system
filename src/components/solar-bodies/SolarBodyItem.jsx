@@ -1,24 +1,19 @@
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
-function SolarBodyItem({ user: { login, avatar_url } }) {
+function SolarBodyItem({ body: { englishName, id } }) {
   return (
     <div className='card shadow-md compact side bg-base-100'>
       <div className='flex-row items-center space-x-4 card-body'>
         <div>
-          <div className='avatar'>
-            <div className='rounded-full shadow w-14 h-14'>
-              <img src={avatar_url} alt='Profile' />
-            </div>
-          </div>
-        </div>
-        <div>
-          <h2 className='card-title'>{login}</h2>
+          <h2 className='card-title'>
+            {englishName} ({id})
+          </h2>
           <Link
             className='text-base-content text-opacity-40'
-            to={`/user/${login}`}
+            to={`/solarbody/{id}`}
           >
-            Visit Profile
+            More info
           </Link>
         </div>
       </div>
@@ -27,7 +22,7 @@ function SolarBodyItem({ user: { login, avatar_url } }) {
 }
 
 SolarBodyItem.propTypes = {
-  user: PropTypes.object.isRequired,
+  body: PropTypes.object.isRequired,
 };
 
 export default SolarBodyItem;
